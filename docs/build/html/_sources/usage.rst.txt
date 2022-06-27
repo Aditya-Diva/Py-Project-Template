@@ -16,7 +16,7 @@ To use Py-project-template, first:
 
 .. code-block:: console
 
-   $ git clone py-project-template
+   $ git clone https://github.com/Aditya-Diva/py-project-template
    $ cd py-project-template
 
 To drop into the interactive terminal for the environment:
