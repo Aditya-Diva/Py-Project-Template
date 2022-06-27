@@ -109,7 +109,7 @@ $ pip3 install pipenv
 To use Py-project-template, first:
 
 ```sh
-$ git clone py-project-template
+$ git clone https://github.com/Aditya-Diva/py-project-template
 $ cd py-project-template
 ```
 
