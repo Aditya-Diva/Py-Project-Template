@@ -76,7 +76,9 @@ $ pipenv shell
 
 ### Documentation
 
-Sphinx was used for documentation. Please refer to [docs/auto_update.sh](docs/auto_update.sh)
+Sphinx was used for documentation. Refer to live documentation for the project at <https://aditya-diva.github.io/py-project-template>
+
+Please refer to [docs/auto_update.sh](docs/auto_update.sh) for updating docs if changes are made.
 
 ### Deployment:
 
