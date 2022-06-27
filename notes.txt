@@ -1,0 +1,23 @@
+Links/Guides:
+
+pipenv -
+https://pypi.org/project/pipenv/
+https://www.youtube.com/watch?v=zDYL22QNiWk
+
+pytest -
+https://pypi.org/project/pytest/
+
+pre-commit -
+https://pypi.org/project/pre-commit/
+https://pre-commit.com/
+https://pre-commit.com/hooks.html (Supported hooks)
+
+Sphinx -
+https://www.sphinx-doc.org/en/master/
+https://www.docslikecode.com/articles/github-pages-python-sphinx/
+https://dock2learn.com/tech/host-your-sphinx-documentation-on-github/
+https://sphinx-themes.org/#theme-sphinx-rtd-theme
+https://betterprogramming.pub/auto-documenting-a-python-project-using-sphinx-8878f9ddc6e9
+
+ABC - Abstract classes
+https://www.geeksforgeeks.org/abstract-base-class-abc-in-python/
