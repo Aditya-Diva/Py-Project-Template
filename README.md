@@ -2,6 +2,9 @@
 
 ![GitHub License](https://img.shields.io/github/license/Aditya-Diva/Py-Project-Template?style=plastic)
 
+[![GitHub Workflow Staging](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI%20Staging?style=plastic&label=staging%20ci)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd-staging.yml)
+[![GitHub Workflow Production](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI?style=plastic&label=main%20ci)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd.yml)
+
 ![Code Style](https://img.shields.io/badge/Code_Style-black-brightgreen)
 ![Linting](https://img.shields.io/static/v1?label=Linting&message=pylint&color=brightgreen)
 ![Testing](https://img.shields.io/badge/Testing-pytest-orange)
