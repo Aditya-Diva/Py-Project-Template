@@ -21,3 +21,6 @@ https://betterprogramming.pub/auto-documenting-a-python-project-using-sphinx-887
 
 ABC - Abstract classes
 https://www.geeksforgeeks.org/abstract-base-class-abc-in-python/
+
+Emojis:
+https://gist.github.com/rxaviers/7360908
