@@ -46,6 +46,4 @@ jobs:
 
       - name: Test with Pytest
         run: |
-          pipenv shell
-          cd tests
-          pytest
+          pipenv run pytest tests/
