@@ -21,3 +21,8 @@ https://betterprogramming.pub/auto-documenting-a-python-project-using-sphinx-887
 
 ABC - Abstract classes
 https://www.geeksforgeeks.org/abstract-base-class-abc-in-python/
+
+Shields.io - for badges
+
+Useful commands:
+git commit --allow-empty -m "Trigger rebuild"
