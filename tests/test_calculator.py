@@ -3,9 +3,9 @@
 """
 @File    :   test_Calculator.py
 @Time    :   2022/06/27 19:12:58
-@Author  :   Aditya Divakaran 
+@Author  :   Aditya Divakaran
 @Version :   1.0
-@Contact :   adi.develops@gmail.com 
+@Contact :   adi.develops@gmail.com
 @License :   MIT License, Aditya Divakaran
 @Desc    :   Testing script
 """
