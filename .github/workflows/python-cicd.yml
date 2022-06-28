@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Check out repository code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Set up Python 3.8
         uses: actions/setup-python@v3
@@ -34,13 +34,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install pipenv
           pipenv install --dev
+
       - name: Lint with black
         run: |
           pipenv run black .
+
       - name: Run pylint
         run: |
           pipenv run pylint main.py
           pipenv run pylint lib/
+
       - name: Test with Pytest
         run: |
           pipenv shell
