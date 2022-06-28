@@ -24,3 +24,8 @@ https://www.geeksforgeeks.org/abstract-base-class-abc-in-python/
 
 Emojis:
 https://gist.github.com/rxaviers/7360908
+
+Shields.io - for badges
+
+Useful commands:
+git commit --allow-empty -m "Trigger rebuild"
