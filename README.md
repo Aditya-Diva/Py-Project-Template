@@ -18,6 +18,7 @@
 - [Usage](#usage)
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
+  - [To Develop](#to-develop)
 - [Overall Flow](#overall-flow)
   - [Linting](#linting)
   - [Testing](#testing)
@@ -65,6 +66,7 @@ To drop into the interactive terminal for the environment:
 
 ```
 $ pipenv shell
+$ pipenv install
 $ python3 main.py
 ```
 
@@ -72,6 +74,13 @@ Else to run directly:
 
 ```sh
 $ pipenv run python3 main.py
+```
+
+### To Develop
+Install the dev packages
+
+```
+$ pipenv install --dev
 ```
 
 ## Overall Flow
