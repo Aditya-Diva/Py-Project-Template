@@ -53,6 +53,22 @@ $ sudo apt-get install -y python3-pip
 $ pip3 install pipenv
 ```
 
+With newer Python versions, go to [Pipfile](Pipfile), and update,
+
+```pipfile
+[requires]
+python_version = "3.x"
+```
+
+And for support in Ubuntu 22.04,
+
+```sh
+export PATH="$HOME/.local/bin:$PATH" # pip3 installs have been shifted to the following location!
+
+# Generally would end up giving -> AttributeError: module 'collections' has no attribute 'MutableMapping'
+export SETUPTOOLS_USE_DISUTILS=stdlib # Handles import issues
+```
+
 ### Running the Application
 
 To use Py-project-template, first:
@@ -77,6 +93,7 @@ $ pipenv run python3 main.py
 ```
 
 ### To Develop
+
 Install the dev packages
 
 ```
