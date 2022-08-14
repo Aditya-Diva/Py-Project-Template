@@ -16,14 +16,11 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-
-      - name: Setup commands
-        run: export PATH="$HOME/.local/bin:$PATH" && export SETUPTOOLS_USE_DISUTILS=stdlib
 
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
