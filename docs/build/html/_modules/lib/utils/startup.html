@@ -108,35 +108,37 @@
 
     <span class="c1"># Get the initial env to understand if we should run in debug mode</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">DEBUG_MODE</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">EnvLoader</span><span class="p">(</span><span class="n">debug_mode</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">debug_mode</span>
-    <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Env vars could not be set. Please check Env Variables!&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="n">debug_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">EnvLoader</span><span class="p">(</span><span class="n">debug_mode</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">debug_mode</span>
+    <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">keyerr</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+            <span class="s2">&quot;Env vars could not be set. Please check Env Variables!&quot;</span><span class="p">,</span> <span class="n">keyerr</span>
+        <span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># Set up logging according to mode set</span>
-    <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-        <span class="n">LOGGING_DEBUG_LEVEL</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span>
-        <span class="n">LOGGING_FORMAT</span> <span class="o">=</span> <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">] </span><span class="si">%(levelname)s</span><span class="s2"> </span><span class="se">\</span>
+    <span class="k">if</span> <span class="n">debug_mode</span><span class="p">:</span>
+        <span class="n">logging_debug_level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span>
+        <span class="n">logging_format</span> <span class="o">=</span> <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">] </span><span class="si">%(levelname)s</span><span class="s2"> </span><span class="se">\</span>
 <span class="s2">        [</span><span class="si">%(name)s</span><span class="s2"> - </span><span class="si">%(filename)s</span><span class="s2">.</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2">] </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">LOGGING_DEBUG_LEVEL</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
-        <span class="n">LOGGING_FORMAT</span> <span class="o">=</span> <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">] </span><span class="si">%(levelname)s</span><span class="s2"> [</span><span class="si">%(name)s</span><span class="s2">] </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
+        <span class="n">logging_debug_level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
+        <span class="n">logging_format</span> <span class="o">=</span> <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">] </span><span class="si">%(levelname)s</span><span class="s2"> [</span><span class="si">%(name)s</span><span class="s2">] </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
 
-    <span class="n">LOG_FILE_PATH</span> <span class="o">=</span> <span class="s2">&quot;data/app.log&quot;</span>
+    <span class="n">log_file_path</span> <span class="o">=</span> <span class="s2">&quot;data/app.log&quot;</span>
     <span class="c1"># Note: Path to file handler is relative to root script that&#39;s run! Can be set as absolute path</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
-        <span class="nb">format</span><span class="o">=</span><span class="n">LOGGING_FORMAT</span><span class="p">,</span>
+        <span class="nb">format</span><span class="o">=</span><span class="n">logging_format</span><span class="p">,</span>
         <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%a</span><span class="s2">, </span><span class="si">%d</span><span class="s2"> %b %Y %H:%M:%S&quot;</span><span class="p">,</span>
-        <span class="n">level</span><span class="o">=</span><span class="n">LOGGING_DEBUG_LEVEL</span><span class="p">,</span>
+        <span class="n">level</span><span class="o">=</span><span class="n">logging_debug_level</span><span class="p">,</span>
         <span class="n">handlers</span><span class="o">=</span><span class="p">[</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">LOG_FILE_PATH</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">),</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">log_file_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">),</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">),</span>
         <span class="p">],</span>
     <span class="p">)</span>
 
     <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-    <span class="n">_</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DEBUG Mode&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">DEBUG_MODE</span> <span class="k">else</span> <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DEBUG mode disabled&quot;</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DEBUG Mode&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">debug_mode</span> <span class="k">else</span> <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DEBUG mode disabled&quot;</span><span class="p">)</span>
 </pre></div>
 
            </div>

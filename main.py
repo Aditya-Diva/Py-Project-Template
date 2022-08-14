@@ -19,7 +19,7 @@ startup.__init__()
 # Load logging of script
 log = logging.getLogger(__name__)
 
-ca = Calculator(5, 6)
+ca: Calculator = Calculator(5, 6)
 print("We made a calc object above!")
 
 log.info("Object made")

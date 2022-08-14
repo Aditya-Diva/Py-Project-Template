@@ -56,7 +56,7 @@ def __init__():
         logging_debug_level = logging.INFO
         logging_format = "[%(asctime)s] %(levelname)s [%(name)s] %(message)s"
 
-    log_file_path = "data/app.log"
+    log_file_path: str = "data/app.log"
     # Note: Path to file handler is relative to root script that's run! Can be set as absolute path
     logging.basicConfig(
         format=logging_format,
