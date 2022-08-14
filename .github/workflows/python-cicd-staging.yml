@@ -35,6 +35,7 @@ jobs:
 
       - name: Debug step
         run: |
+          pip install platformdirs
           pipenv run echo "$PATH"
           pipenv run python3 -c 'import platformdirs'
 
