@@ -33,6 +33,13 @@ jobs:
           pip install pipenv
           pipenv install --dev
 
+      - name: Debug step
+        run: pip list | grep platform
+
+      - name: Lint with black
+        run: |
+          pipenv run black .
+
       - name: Run pylint
         run: |
           pipenv run pylint main.py
@@ -41,7 +48,3 @@ jobs:
       - name: Test with Pytest
         run: |
           pipenv run pytest tests/
-
-      - name: Lint with black
-        run: |
-          pipenv run black .
