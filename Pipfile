@@ -14,7 +14,6 @@ sphinx = "*"
 pre-commit = "*"
 pylint = "*"
 black = "*"
-platformdirs = "*"
 
 [requires]
 python_version = "3.10"
