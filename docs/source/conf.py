@@ -14,7 +14,8 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../../lib/*"))
+# This is the path registered when parsing through .rst files
+sys.path.insert(0, os.path.abspath("../../"))
 
 
 # -- Project information -----------------------------------------------------
@@ -36,6 +37,7 @@ extensions = [
     "sphinx.ext.duration",
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
 ]
 
 # Add any paths that contain templates here, relative to this directory.

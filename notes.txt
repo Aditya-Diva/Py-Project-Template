@@ -29,3 +29,6 @@ Shields.io - for badges
 
 Useful commands:
 git commit --allow-empty -m "Trigger rebuild"
+
+Logging -
+https://coralogix.com/blog/python-logging-best-practices-tips/
