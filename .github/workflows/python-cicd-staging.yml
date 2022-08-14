@@ -36,6 +36,7 @@ jobs:
       - name: Debug step
         run: |
           pip install platformdirs
+          ls /opt/hostedtoolcache/Python/3.10.6/x64/bin
           pipenv run echo "$PATH"
           pipenv run python3 -c 'import platformdirs'
 
