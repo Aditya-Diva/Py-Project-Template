@@ -34,7 +34,7 @@ jobs:
           pipenv install --dev
 
       - name: Debug step
-        run: pip list | grep platform
+        run: pipenv run python3 -c 'import platformdirs'
 
       - name: Lint with black
         run: |
