@@ -25,6 +25,7 @@
   - [Pre-commit](#pre-commit)
   - [Documentation](#documentation)
   - [Deployment](#deployment)
+  - [Additional](#additional)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -210,6 +211,17 @@ Generally a better idea to use scripts(.sh files / .bat etc.) and run them in wo
   ```
 
 - A similar setup can be created with Docker instead for containerization.
+
+---
+
+### Additional:
+
+Some miscellaneous packages used are:
+
+- **[Logging](https://docs.python.org/3/library/logging.html)** to maintain logs.
+- **[Pydantic](https://pypi.org/project/pydantic/)** to standardize/validate inputs.
+  - Pydantic has been used in [lib/utils/startup.py](lib/utils/startup.py) for validation in this repo. It could be used more thoroughly in python libraries as well.
+- **[Dotenv](https://pypi.org/project/python-dotenv/)** to read .env settings/config.
 
 ## Contributing
 
