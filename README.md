@@ -18,12 +18,14 @@
 - [Usage](#usage)
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
+  - [To Develop](#to-develop)
 - [Overall Flow](#overall-flow)
   - [Linting](#linting)
   - [Testing](#testing)
   - [Pre-commit](#pre-commit)
   - [Documentation](#documentation)
   - [Deployment](#deployment)
+  - [Additional](#additional)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -52,6 +54,22 @@ $ sudo apt-get install -y python3-pip
 $ pip3 install pipenv
 ```
 
+With newer Python versions, go to [Pipfile](Pipfile), and update,
+
+```pipfile
+[requires]
+python_version = "3.x"
+```
+
+And for support in Ubuntu 22.04,
+
+```sh
+export PATH="$HOME/.local/bin:$PATH" # pip3 installs have been shifted to the following location!
+
+# Generally would end up giving -> AttributeError: module 'collections' has no attribute 'MutableMapping'
+export SETUPTOOLS_USE_DISUTILS=stdlib # Handles import issues
+```
+
 ### Running the Application
 
 To use Py-project-template, first:
@@ -65,6 +83,7 @@ To drop into the interactive terminal for the environment:
 
 ```
 $ pipenv shell
+$ pipenv install
 $ python3 main.py
 ```
 
@@ -72,6 +91,14 @@ Else to run directly:
 
 ```sh
 $ pipenv run python3 main.py
+```
+
+### To Develop
+
+Install the dev packages
+
+```
+$ pipenv install --dev
 ```
 
 ## Overall Flow
@@ -184,6 +211,17 @@ Generally a better idea to use scripts(.sh files / .bat etc.) and run them in wo
   ```
 
 - A similar setup can be created with Docker instead for containerization.
+
+---
+
+### Additional:
+
+Some miscellaneous packages used are:
+
+- **[Logging](https://docs.python.org/3/library/logging.html)** to maintain logs.
+- **[Pydantic](https://pypi.org/project/pydantic/)** to standardize/validate inputs.
+  - Pydantic has been used in [lib/utils/startup.py](lib/utils/startup.py) for validation in this repo. It could be used more thoroughly in python libraries as well.
+- **[Dotenv](https://pypi.org/project/python-dotenv/)** to read .env settings/config.
 
 ## Contributing
 
