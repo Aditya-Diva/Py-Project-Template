@@ -10,7 +10,11 @@
 @Desc    :   Calculator Class
 """
 
+import logging
 from .calc_abstract_class import CalcAbstractClass
+
+# Load logging of script
+log = logging.getLogger(__name__)
 
 
 class Calculator(CalcAbstractClass):
@@ -32,7 +36,9 @@ class Calculator(CalcAbstractClass):
         super().__init__()
         self._num1 = num1  # This is the first number
         self._num2 = num2  # This is the second number
-        print(f"Calculator class instance initialized with numbers: {num1} {num2}")
+        log.info(
+            "Calculator class instance initialized with numbers: %d %d", num1, num2
+        )
 
     # Custom dunder/magic methods
     def __str__(self) -> str:

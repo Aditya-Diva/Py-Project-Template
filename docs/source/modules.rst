@@ -1,7 +1,7 @@
-Calculator
-==========
+lib
+===
 
 .. toctree::
    :maxdepth: 4
 
-   Calculator
+   lib
