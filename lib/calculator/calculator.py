@@ -207,7 +207,9 @@ class Calculator(CalcAbstractClass):
 
 
 def main():
-    C = Calculator()
+    """Main func"""
+    calc = Calculator()
+    del calc
     print("Done.")
 
 
