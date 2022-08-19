@@ -1,15 +1,22 @@
 # Py Project Template
 
-![GitHub License](https://img.shields.io/github/license/Aditya-Diva/Py-Project-Template?style=plastic)
+[![Github License](https://img.shields.io/badge/License-MIT-green?style=plastic)](LICENSE)
 
-[![GitHub Workflow Staging](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI%20Staging?style=plastic&label=staging%20ci)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd-staging.yml)
-[![GitHub Workflow Production](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI?style=plastic&label=main%20ci)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd.yml)
+[![GitHub Workflow Staging](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI%20Staging?style=plastic&label=Staging%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd-staging.yml)
+&emsp;
+[![GitHub Workflow Production](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI?style=plastic&label=Main%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd.yml)
 
-![Code Style](https://img.shields.io/badge/Code_Style-black-brightgreen)
-![Linting](https://img.shields.io/static/v1?label=Linting&message=pylint&color=brightgreen)
-![Testing](https://img.shields.io/badge/Testing-pytest-orange)
+[![Code Style](https://img.shields.io/badge/Code_Style-black-black?style=plastic)](https://pypi.org/project/black/)
+&emsp;
+[![Linting](https://img.shields.io/static/v1?label=Linting&message=pylint&color=brightgreen&style=plastic)](https://pypi.org/project/pylint/)
 
-[![Docs](https://img.shields.io/badge/Docs-Sphinx-blue)](https://aditya-diva.github.io/Py-Project-Template/)
+Check out project links:
+
+[![Docs](https://img.shields.io/badge/Docs-sphinx-blue?style=plastic)](https://aditya-diva.github.io/Py-Project-Template/)
+&emsp;
+[![Testing](https://img.shields.io/badge/Testing-pytest-orange?style=plastic)](https://aditya-diva.github.io/Py-Project-Template/reports/pytest/index.html)
+&emsp;
+[![Docs](https://img.shields.io/badge/Coverage-pytestcov-blue?style=plastic)](https://aditya-diva.github.io/Py-Project-Template/reports/pytest-cov/index.html)
 
 ## Table of Contents
 
@@ -167,7 +174,7 @@ Note :
 
 #### **PyTest Reports**
 
-- **[PyTest-HTML](https://pypi.org/project/pytest-html/)** used in [reports/generate_reports.sh](reports/generate_reports.sh) to create an HTMl report for pytest.
+- **[PyTest-HTML](https://pypi.org/project/pytest-html/)** used in [reports/update.sh](reports/update.sh) to create an HTMl report for pytest.
 
 #### **Coverage Reports**
 
