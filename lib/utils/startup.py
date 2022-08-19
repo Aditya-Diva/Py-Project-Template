@@ -15,11 +15,13 @@ import sys
 import logging
 
 # Valid but pylint acts up
-from pydantic import BaseModel  # pylint: disable=no-name-in-module
+from pydantic import BaseModel, ValidationError  # pylint: disable=no-name-in-module
 
 # Load .env setup
 # Note: Remove this setup in case of docker environment
 from dotenv import load_dotenv
+
+load_dotenv(".env")  # Load .env file once
 
 # Using pydantic for robust casting (1, True, on, true / 0, False, off, false)
 class EnvLoader(BaseModel):  # pylint: disable=too-few-public-methods
@@ -36,15 +38,17 @@ class EnvLoader(BaseModel):  # pylint: disable=too-few-public-methods
 
 def __init__():
     """Wrapper for commands to be run during app startup"""
-    load_dotenv(".env")
 
     # Get the initial env to understand if we should run in debug mode
     try:
         debug_mode: bool = EnvLoader(debug_mode=os.environ["DEBUG_MODE"]).debug_mode
+    except ValidationError as valerr:
+        sys.stderr.write("Env vars values are not valid. Please check Env Variables!")
+        sys.stderr.write(str(valerr))
+        sys.exit(1)
     except KeyError as keyerr:
-        sys.stderr.write(
-            "Env vars could not be set. Please check Env Variables!", keyerr
-        )
+        sys.stderr.write("Env vars could not be set. Please check Env Variables!")
+        sys.stderr.write(str(keyerr))
         sys.exit(1)
 
     # Set up logging according to mode set

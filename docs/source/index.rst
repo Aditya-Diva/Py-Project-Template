@@ -20,6 +20,11 @@ It involves some concepts like pydoc, abstract classes and implements a rather l
    usage
    modules
 
+**Reports**
+
+- `PyTest Report <../../../reports/pytest/index.html>`_
+- `PyTest Coverage Report <../../../reports/pytest-cov/index.html>`_
+
 Indices and tables
 ==================
 

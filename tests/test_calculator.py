@@ -11,11 +11,34 @@
 """
 
 import pytest
+import lib.calculator.calculator as script  # In particular to test main() function
 from lib.calculator.calculator import Calculator
 
 
 class TestCalculator:
     """Class to test Calculator"""
+
+    # Testing dunder functions
+    @pytest.mark.dunder
+    @pytest.mark.parametrize("num1, num2", [(1, 2), (2, 3), (-1, -1), (0, 0)])
+    def test_len(self, num1, num2):
+        """len of object"""
+        t_c = Calculator(num1, num2)
+        assert len(t_c) == 2
+
+    @pytest.mark.dunder
+    @pytest.mark.parametrize("num1, num2", [(1, 2), (2, 3), (-1, -1), (0, 0)])
+    def test_str(self, num1, num2):
+        """str of object"""
+        t_c = Calculator(num1, num2)
+        str(t_c)
+
+    @pytest.mark.dunder
+    @pytest.mark.parametrize("num1, num2", [(1, 2), (2, 3), (-1, -1), (0, 0)])
+    def test_repr(self, num1, num2):
+        """repr of object"""
+        t_c = Calculator(num1, num2)
+        repr(t_c)
 
     # Testing getters
     @pytest.mark.getter
@@ -131,3 +154,8 @@ class TestCalculator:
         with pytest.raises(ZeroDivisionError):
             t_c = Calculator(1, 0)
             t_c.divide()
+
+    @pytest.mark.main
+    def test_main(self):
+        """Test main function"""
+        script.main()

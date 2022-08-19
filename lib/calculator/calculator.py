@@ -206,6 +206,10 @@ class Calculator(CalcAbstractClass):
         return Calculator._divide(self._num1, self._num2)
 
 
-if __name__ == "__main__":
+def main():
     C = Calculator()
     print("Done.")
+
+
+if __name__ == "__main__":
+    main()
