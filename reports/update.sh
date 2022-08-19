@@ -17,7 +17,7 @@
 # --cov-report -> Type of output format:destination
 # --cov-config -> Provide path to config (.coveragerc)
 # Path to tests that cover the module
-pytest -q --html=reports/pytest/index.html --cov=lib --cov-report=html:reports/pytest-cov/ --cov-config=reports/.coveragerc tests/
+pytest -q --html=reports/pytest/index.html --cov=lib --cov-report=html:reports/pytestcov/ --cov-config=reports/.coveragerc tests/
 
 # Adding command a second time so it's generated in the docs folder (For github gh-pages)
-pytest -q --html=docs/reports/pytest/index.html --cov=lib --cov-report=html:docs/reports/pytest-cov/ --cov-config=reports/.coveragerc tests/
+pytest -q --html=docs/reports/pytest/index.html --cov=lib --cov-report=html:docs/reports/pytestcov/ --cov-config=reports/.coveragerc tests/
