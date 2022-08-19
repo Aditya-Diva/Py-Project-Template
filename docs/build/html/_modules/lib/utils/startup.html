@@ -83,11 +83,13 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="c1"># Valid but pylint acts up</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>  <span class="c1"># pylint: disable=no-name-in-module</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">ValidationError</span>  <span class="c1"># pylint: disable=no-name-in-module</span>
 
 <span class="c1"># Load .env setup</span>
 <span class="c1"># Note: Remove this setup in case of docker environment</span>
 <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">(</span><span class="s2">&quot;.env&quot;</span><span class="p">)</span>  <span class="c1"># Load .env file once</span>
 
 <span class="c1"># Using pydantic for robust casting (1, True, on, true / 0, False, off, false)</span>
 <div class="viewcode-block" id="EnvLoader"><a class="viewcode-back" href="../../../lib.utils.html#lib.utils.startup.EnvLoader">[docs]</a><span class="k">class</span> <span class="nc">EnvLoader</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
@@ -104,15 +106,17 @@
 
 <span class="k">def</span> <span class="fm">__init__</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Wrapper for commands to be run during app startup&quot;&quot;&quot;</span>
-    <span class="n">load_dotenv</span><span class="p">(</span><span class="s2">&quot;.env&quot;</span><span class="p">)</span>
 
     <span class="c1"># Get the initial env to understand if we should run in debug mode</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">debug_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">EnvLoader</span><span class="p">(</span><span class="n">debug_mode</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">debug_mode</span>
+    <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">valerr</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Env vars values are not valid. Please check Env Variables!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">valerr</span><span class="p">))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">keyerr</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-            <span class="s2">&quot;Env vars could not be set. Please check Env Variables!&quot;</span><span class="p">,</span> <span class="n">keyerr</span>
-        <span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Env vars could not be set. Please check Env Variables!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">keyerr</span><span class="p">))</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># Set up logging according to mode set</span>
@@ -124,7 +128,7 @@
         <span class="n">logging_debug_level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
         <span class="n">logging_format</span> <span class="o">=</span> <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">] </span><span class="si">%(levelname)s</span><span class="s2"> [</span><span class="si">%(name)s</span><span class="s2">] </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
 
-    <span class="n">log_file_path</span> <span class="o">=</span> <span class="s2">&quot;data/app.log&quot;</span>
+    <span class="n">log_file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;data/app.log&quot;</span>
     <span class="c1"># Note: Path to file handler is relative to root script that&#39;s run! Can be set as absolute path</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
         <span class="nb">format</span><span class="o">=</span><span class="n">logging_format</span><span class="p">,</span>
