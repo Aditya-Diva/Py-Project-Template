@@ -1,6 +1,13 @@
-*/__pycache__/*
-*/.pytest_cache/*
+**/__pycache__/**
+**/.pytest_cache/**
 *.pyc
-*/.vscode/*
+**/.vscode/**
+
+# For logging
 *.log
+
+# From coverage pkg in report generation
+.coverage
+
+# Misc
 TODO.md

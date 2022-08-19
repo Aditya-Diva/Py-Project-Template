@@ -22,6 +22,8 @@
 - [Overall Flow](#overall-flow)
   - [Linting](#linting)
   - [Testing](#testing)
+    - [PyTest Reports](#pytest-reports)
+    - [Coverage Reports](#coverage-reports)
   - [Pre-commit](#pre-commit)
   - [Documentation](#documentation)
   - [Deployment](#deployment)
@@ -38,12 +40,14 @@ It's also meant to act as a refresher for some good practices and/or to look up 
 
 It involves some concepts like abstract classes, documentation, and testing and implements a rather limited calculator logic for the base.
 
-## Packages used
+## Flow Packages used
 
 - **pipenv** for creating a virtual environment.
-  Using pytest for testing packages. (https://docs.pytest.org/)
+- **pytest** for testing packages. (https://docs.pytest.org/)
 - **pre-commit** for linting(**pylint**) and running tests(**pytest**) before committing.
-- **Sphinx** for maintaining auto generated code documentation.
+- **pytest-html** to generate pytest html report.
+- **pytest-cov** to generate test coverage reports.
+- **sphinx** for maintaining auto generated code documentation along with links to generated reports mentioned above.
 
 ## Usage
 
@@ -157,7 +161,37 @@ E.g
 $ pytest -m getter
 ```
 
-Note different custom marks have been defined in [tests/pytest.ini](tests/pytest.ini)
+Note :
+
+- Different custom marks have been defined in [tests/pytest.ini](tests/pytest.ini)
+
+#### **PyTest Reports**
+
+- **[PyTest-HTML](https://pypi.org/project/pytest-html/)** used in [reports/generate_reports.sh](reports/generate_reports.sh) to create an HTMl report for pytest.
+
+#### **Coverage Reports**
+
+Using following packages:
+
+- **[Coverage](https://pypi.org/project/coverage/)** - Code Analysis tool to determine which lines are executable/executed.
+- **[PyTest-Cov](https://pypi.org/project/pytest-cov/)** - Test Coverage reports (Uses coverage internally)
+
+> Please refer to [reports/.coveragerc](reports/.coveragerc) which acts as the config for test coverage.
+
+> Please refer to [reports/update.sh](reports/update.sh) for understanding reports update steps.
+
+In order to update reports,
+
+```sh
+$ pipenv shell
+(env) $ ./reports/update.sh
+```
+
+OR
+
+```sh
+$ pipenv run ./reports/update.sh
+```
 
 ---
 
@@ -183,7 +217,20 @@ $ pipenv shell
 
 > [**Sphinx**](https://www.sphinx-doc.org/en/master/) was used for documentation. Refer to live documentation for the project at <https://aditya-diva.github.io/Py-Project-Template/>
 
-> Please refer to [docs/auto_update.sh](docs/auto_update.sh) for updating docs if changes are made.
+> Please refer to [docs/update.sh](docs/update.sh) for understanding docs update steps.
+
+In order to update docs,
+
+```sh
+$ pipenv shell
+(env) $ ./docs/update.sh
+```
+
+OR
+
+```sh
+$ pipenv run ./docs/update.sh
+```
 
 ---
 
@@ -243,5 +290,5 @@ Aditya Divakaran - [@LinkedIn](https://www.linkedin.com/in/aditya-divakaran/) - 
 
 Notes:
 
-- This was tested on Ubuntu 20.04.
+- This was tested on Ubuntu 22.04.
 - Refer to [notes](notes.txt) for helpful links on particular framework/tool.

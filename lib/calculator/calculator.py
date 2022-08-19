@@ -206,6 +206,12 @@ class Calculator(CalcAbstractClass):
         return Calculator._divide(self._num1, self._num2)
 
 
-if __name__ == "__main__":
-    C = Calculator()
+def main():
+    """Main func"""
+    calc = Calculator()
+    del calc
     print("Done.")
+
+
+if __name__ == "__main__":
+    main()

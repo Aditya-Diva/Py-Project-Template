@@ -20,6 +20,6 @@ repos:
         types: [python]
       - id: pytest
         name: pytest
-        entry: bash -c 'cd tests;pytest -v --color=yes'
+        entry: bash -c 'pytest -v --color=yes tests/'
         language: system
         types: [python]

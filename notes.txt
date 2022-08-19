@@ -18,6 +18,7 @@ https://www.docslikecode.com/articles/github-pages-python-sphinx/
 https://dock2learn.com/tech/host-your-sphinx-documentation-on-github/
 https://sphinx-themes.org/#theme-sphinx-rtd-theme
 https://betterprogramming.pub/auto-documenting-a-python-project-using-sphinx-8878f9ddc6e9
+https://bashtage.github.io/sphinx-material/rst-cheatsheet/rst-cheatsheet.html
 
 ABC - Abstract classes
 https://www.geeksforgeeks.org/abstract-base-class-abc-in-python/
