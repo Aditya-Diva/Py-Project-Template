@@ -21,13 +21,12 @@ pytest -q --html=reports/pytest/index.html --cov=lib --cov-report=html:reports/p
 
 # Post setup steps (Ignore files in pytest folder)
 # In case of pytest-cov(a .gitignore is automatically generated)
-# echo "*" > reports/pytest/.gitignore
-rm reports/pytest-cov/.gitignore
+echo "*" > reports/pytest/.gitignore
 
-# # FOR GH-PAGES
-# # Adding command a second time so it's generated in the docs folder (For github gh-pages)
-# pytest -q --html=docs/reports/pytest/index.html --cov=lib --cov-report=html:docs/reports/pytest-cov/ --cov-config=reports/.coveragerc tests/
+# FOR GH-PAGES
+# Adding command a second time so it's generated in the docs folder (For github gh-pages)
+pytest -q --html=docs/reports/pytest/index.html --cov=lib --cov-report=html:docs/reports/pytest-cov/ --cov-config=reports/.coveragerc tests/
 
-# # Post setup steps (Ensure .gitignore isn't applied to pytest-cov)
-# # Only then will the files be uploaded to github
-# rm docs/reports/pytest-cov/.gitignore
+# Post setup steps (Ensure .gitignore isn't applied to pytest-cov)
+# Only then will the files be uploaded to github
+rm docs/reports/pytest-cov/.gitignore
