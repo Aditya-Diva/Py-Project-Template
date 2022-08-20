@@ -1,1 +1,4 @@
+# Folder to keep data generated during run-time!
+# This could be specific user-data or just the application run data
+# This can be the folder mounted to persistent volume in the future!
 *
