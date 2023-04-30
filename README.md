@@ -87,15 +87,18 @@ To use Py-project-template, first:
 
 ```sh
 $ git clone https://github.com/Aditya-Diva/py-project-template
-$ cd py-project-template
+$ cd Py-Project-Template/
 ```
 
 To drop into the interactive terminal for the environment:
 
 ```
 $ pipenv shell
-$ pipenv install
+$ pipenv install # rm Pipfile.lock, to regenerate package versions if required
 $ python3 main.py
+
+# FOR REFERENCE:
+$ pipenv --rm # To remove the virtual env created (if necessary)
 ```
 
 Else to run directly:
