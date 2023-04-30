@@ -300,5 +300,5 @@ Aditya Divakaran - [@LinkedIn](https://www.linkedin.com/in/aditya-divakaran/) - 
 
 Notes:
 
-- This was tested on Ubuntu 22.04.
+- This was tested on Ubuntu 22.04 and Windows (WSL).
 - Refer to [notes](notes.txt) for helpful links on particular framework/tool.
