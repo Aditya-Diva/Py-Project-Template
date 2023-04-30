@@ -2,9 +2,9 @@
 
 [![Github License](https://img.shields.io/badge/License-MIT-green?style=plastic)](LICENSE)
 
-[![GitHub Workflow Staging](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI%20Staging?style=plastic&label=Staging%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd-staging.yml)
+[![GitHub Workflow Staging](https://img.shields.io/github/actions/workflow/status/Aditya-Diva/Py-Project-Template/python-cicd-staging.yml?style=plastic&label=Staging%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd-staging.yml)
 &emsp;
-[![GitHub Workflow Production](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI?style=plastic&label=Main%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd.yml)
+[![GitHub Workflow Production](https://img.shields.io/github/actions/workflow/status/Aditya-Diva/Py-Project-Template/python-cicd.yml?style=plastic&label=Main%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd.yml)
 
 [![Code Style](https://img.shields.io/badge/Code_Style-black-black?style=plastic)](https://pypi.org/project/black/)
 &emsp;
