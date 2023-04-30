@@ -61,7 +61,8 @@ It involves some concepts like abstract classes, documentation, and testing and 
 ### Installation
 
 ```sh
-$ sudo apt-get install -y python3-pip pipenv
+$ sudo apt-get install -y python3-pip
+$ pip3 install pipenv
 ```
 
 With newer Python versions, go to [Pipfile](Pipfile), and update,
@@ -95,6 +96,9 @@ To drop into the interactive terminal for the environment:
 $ pipenv shell
 $ pipenv install # rm Pipfile.lock, to regenerate package versions if required
 $ python3 main.py
+
+# FOR REFERENCE:
+$ pipenv --rm # To remove the virtual env created (if necessary)
 ```
 
 Else to run directly:
