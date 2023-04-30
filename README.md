@@ -2,9 +2,9 @@
 
 [![Github License](https://img.shields.io/badge/License-MIT-green?style=plastic)](LICENSE)
 
-[![GitHub Workflow Staging](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI%20Staging?style=plastic&label=Staging%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd-staging.yml)
+[![GitHub Workflow Staging](https://img.shields.io/github/actions/workflow/status/Aditya-Diva/Py-Project-Template/python-cicd-staging.yml?style=plastic&label=Staging%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd-staging.yml)
 &emsp;
-[![GitHub Workflow Production](https://img.shields.io/github/workflow/status/Aditya-Diva/Py-Project-Template/Python%20CI?style=plastic&label=Main%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd.yml)
+[![GitHub Workflow Production](https://img.shields.io/github/actions/workflow/status/Aditya-Diva/Py-Project-Template/python-cicd.yml?style=plastic&label=Main%20CI)](https://github.com/Aditya-Diva/Py-Project-Template/actions/workflows/python-cicd.yml)
 
 [![Code Style](https://img.shields.io/badge/Code_Style-black-black?style=plastic)](https://pypi.org/project/black/)
 &emsp;
@@ -87,15 +87,18 @@ To use Py-project-template, first:
 
 ```sh
 $ git clone https://github.com/Aditya-Diva/py-project-template
-$ cd py-project-template
+$ cd Py-Project-Template/
 ```
 
 To drop into the interactive terminal for the environment:
 
 ```
 $ pipenv shell
-$ pipenv install
+$ pipenv install # rm Pipfile.lock, to regenerate package versions if required
 $ python3 main.py
+
+# FOR REFERENCE:
+$ pipenv --rm # To remove the virtual env created (if necessary)
 ```
 
 Else to run directly:

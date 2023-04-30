@@ -23,6 +23,7 @@ from dotenv import load_dotenv
 
 load_dotenv(".env")  # Load .env file once
 
+
 # Using pydantic for robust casting (1, True, on, true / 0, False, off, false)
 class EnvLoader(BaseModel):  # pylint: disable=too-few-public-methods
     """Env Loading Class - Meant to act as a single blueprint for loading env
